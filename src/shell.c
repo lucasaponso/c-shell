@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/wait.h>
 #include "shell.h"
 #include "utils.h"
 
@@ -12,7 +13,8 @@ char shell_in[C_SHELL_MAX_CMD];
 void* shell_mngr(void * param)
 {
     char * cmd_args[C_SHELL_MAX_ARGS];
-    
+    pid_t pid;
+
     while (1)
     {
         printf("%s", C_SHELL_PREFIX);
@@ -23,22 +25,28 @@ void* shell_mngr(void * param)
         }
 
         remove_newline(shell_in);
+        delimit_cmd(shell_in, cmd_args);
 
-        if (strncmp(shell_in, "exit", max(strlen(shell_in), strlen("exit"))) == 0)
+        pid = fork();
+
+        if (pid == 0)
         {
-            printf("Exiting shell...\n");
+            execvp(cmd_args[0], cmd_args);
             goto exit;
         }
-
-        delimit_cmd(shell_in, cmd_args);
-        
+        else if (pid > 0)
+        {
+            waitpid(pid, NULL, 0);
+        }
+        else
+        {
+            printf("Fork failed\n");
+            goto exit;
+        }
     }
-    goto exit;
 
     exit:
         pthread_exit(NULL);
-    
-    
 }
 
 void delimit_cmd(char cmd[C_SHELL_MAX_CMD], char * args[C_SHELL_MAX_ARGS])
