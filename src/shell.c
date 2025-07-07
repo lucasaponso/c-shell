@@ -15,9 +15,10 @@ void* shell_mngr(void * param)
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
 
+    build_shell_prompt(prompt);
+    
     while (1)
     {
-        build_shell_prompt(prompt);
 
         printf("%s", prompt);
         
