@@ -17,8 +17,9 @@ jobs:
       - name: Set up build environment
         run: sudo apt-get update && sudo apt-get install -y build-essential
 
+      - name: Clean (optional)
+        run: make clean
+      
       - name: Build with Make
         run: make
 
-      - name: Clean (optional)
-        run: make clean
