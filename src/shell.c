@@ -6,12 +6,13 @@
 #include "utils.h"
 
 #define C_SHELL_PREFIX "c-shell> "
-#define C_SHELL_MAX_CMD 1024
 
 char shell_in[C_SHELL_MAX_CMD];
 
 void* shell_mngr(void * param)
 {
+    char * cmd_args[C_SHELL_MAX_ARGS];
+    
     while (1)
     {
         printf("%s", C_SHELL_PREFIX);
@@ -27,8 +28,10 @@ void* shell_mngr(void * param)
         {
             printf("Exiting shell...\n");
             goto exit;
-            
         }
+
+        delimit_cmd(shell_in, cmd_args);
+        
     }
     goto exit;
 
@@ -36,4 +39,18 @@ void* shell_mngr(void * param)
         pthread_exit(NULL);
     
     
+}
+
+void delimit_cmd(char cmd[C_SHELL_MAX_CMD], char * args[C_SHELL_MAX_ARGS])
+{
+    char * token = strtok(cmd, " ");
+    size_t i = 0;
+    
+    while ((token != NULL) && (i < C_SHELL_MAX_ARGS - 1))
+    {
+        args[i++] = token;
+        token = strtok(NULL, " ");
+    }
+
+    args[i] = NULL;
 }
