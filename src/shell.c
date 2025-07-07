@@ -5,19 +5,21 @@
 #include <sys/wait.h>
 #include "shell.h"
 #include "utils.h"
-
-#define C_SHELL_PREFIX "c-shell> "
+#include "prompt.h"
 
 char shell_in[C_SHELL_MAX_CMD];
 
 void* shell_mngr(void * param)
 {
     char * cmd_args[C_SHELL_MAX_ARGS];
+    char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
 
     while (1)
     {
-        printf("%s", C_SHELL_PREFIX);
+        build_shell_prompt(prompt);
+
+        printf("%s", prompt);
         
         if (fgets(shell_in, C_SHELL_MAX_CMD, stdin) == NULL)
         {
