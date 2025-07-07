@@ -2,6 +2,12 @@
 #include <pthread.h>
 #include "shell.h"
 
+/**
+ * @brief The following function is the entry
+ * point of the program. Starts by creating a thread
+ * to manage SHELL.
+ * @return int
+ */
 int main(int argc, char ** argv)
 {
     pthread_t shell_th_handler;

@@ -1,6 +1,7 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "shell.h"
 
 void* shell_mngr(void * param)
 {
