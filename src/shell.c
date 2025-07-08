@@ -65,6 +65,8 @@ void* shell_mngr(void * param)
                 default:
                     break;
             }
+
+            continue;
         }
 
         pid = fork();
