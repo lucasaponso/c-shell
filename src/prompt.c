@@ -25,6 +25,7 @@ void build_shell_prompt(char prompt[C_SHELL_MAX_PROMPT])
     strcpy(prompt, pw->pw_name);
     strcat(prompt, "@");
     strcat(prompt, hostname);
+    strcat(prompt, ">");
     strcat(prompt, " ");
 
     return;

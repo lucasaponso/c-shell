@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/aponso/projects/c-shell/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
