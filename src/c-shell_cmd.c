@@ -30,7 +30,7 @@ void cmd_run(const char * filename)
         return;
     }
 
-    c_shell_cs_init(filename);
+    csh_lang_init(filename);
 }
 
 void cmd_history()

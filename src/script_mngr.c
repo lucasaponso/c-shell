@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void c_shell_cs_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
+void csh_lang_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
 {
     size_t i;
     for (i = 0; cmd_args[i] != NULL; i++)
@@ -14,7 +14,7 @@ void c_shell_cs_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
     }
 }
 
-void c_shell_cs_init(const char * filename)
+void csh_lang_init(const char * filename)
 {
     FILE * script;
     size_t i;
@@ -35,7 +35,7 @@ void c_shell_cs_init(const char * filename)
 
         delimit_cmd(shell_in, cmd_args);
         
-        c_shell_cs_cmd(cmd_args);
+        csh_lang_cmd(cmd_args);
     }
 
     fclose(script);

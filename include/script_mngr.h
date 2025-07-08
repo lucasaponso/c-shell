@@ -9,7 +9,7 @@
  * to process the parsed cmd
  * @param filename The script being parsed
  */
-void c_shell_cs_init(const char * filename);
+void csh_lang_init(const char * filename);
 
 
 /**
@@ -17,7 +17,7 @@ void c_shell_cs_init(const char * filename);
  * the commands, it strictly checks that the commands follow the 
  * C_SHELL LANG Specificiations.
  */
-void c_shell_cs_cmd(char * cmd_args[C_SHELL_MAX_ARGS]);
+void csh_lang_cmd(char * cmd_args[C_SHELL_MAX_ARGS]);
 
 
 #endif //SCRIPT_MNGR_H
