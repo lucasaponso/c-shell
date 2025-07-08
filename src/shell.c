@@ -15,6 +15,8 @@ char shell_in[C_SHELL_MAX_CMD];
 
 void* shell_mngr(void * param)
 {
+    FILE *input = (FILE *)param;
+
     char * cmd_args[C_SHELL_MAX_ARGS];
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
@@ -26,20 +28,30 @@ void* shell_mngr(void * param)
     
     while (1)
     {
-        printf("%s", prompt);
+        if (input == stdin)
+        { 
+            printf("%s", prompt);
+        }
         
-        if (fgets(shell_in, C_SHELL_MAX_CMD, stdin) == NULL)
+        if (fgets(shell_in, C_SHELL_MAX_CMD, input) == NULL)
         {
             break;
         }
 
         remove_newline(shell_in);
         delimit_cmd(shell_in, cmd_args);
+
+        if (cmd_args[0] == NULL)
+            continue;
+
         
         if ((cmd = get_best_cmd(cmd_args[0])) != CMD_UNKNOWN)
         {
             switch (cmd)
             {
+                case CMD_RUN:
+                    cmd_run(cmd_args[1]);
+                    break;
                 case CMD_EXIT:
                     cmd_exit();
                     break;

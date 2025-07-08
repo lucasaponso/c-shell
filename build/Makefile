@@ -225,6 +225,30 @@ src/prompt.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/prompt.c.s
 .PHONY : src/prompt.c.s
 
+src/script_mngr.o: src/script_mngr.c.o
+.PHONY : src/script_mngr.o
+
+# target to build an object file
+src/script_mngr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/script_mngr.c.o
+.PHONY : src/script_mngr.c.o
+
+src/script_mngr.i: src/script_mngr.c.i
+.PHONY : src/script_mngr.i
+
+# target to preprocess a source file
+src/script_mngr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/script_mngr.c.i
+.PHONY : src/script_mngr.c.i
+
+src/script_mngr.s: src/script_mngr.c.s
+.PHONY : src/script_mngr.s
+
+# target to generate assembly for a file
+src/script_mngr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/script_mngr.c.s
+.PHONY : src/script_mngr.c.s
+
 src/shell.o: src/shell.c.o
 .PHONY : src/shell.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... src/prompt.o"
 	@echo "... src/prompt.i"
 	@echo "... src/prompt.s"
+	@echo "... src/script_mngr.o"
+	@echo "... src/script_mngr.i"
+	@echo "... src/script_mngr.s"
 	@echo "... src/shell.o"
 	@echo "... src/shell.i"
 	@echo "... src/shell.s"

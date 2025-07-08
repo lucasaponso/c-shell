@@ -10,6 +10,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/main.c.o.d"
   "CMakeFiles/main.dir/src/prompt.c.o"
   "CMakeFiles/main.dir/src/prompt.c.o.d"
+  "CMakeFiles/main.dir/src/script_mngr.c.o"
+  "CMakeFiles/main.dir/src/script_mngr.c.o.d"
   "CMakeFiles/main.dir/src/shell.c.o"
   "CMakeFiles/main.dir/src/shell.c.o.d"
   "CMakeFiles/main.dir/src/users.c.o"

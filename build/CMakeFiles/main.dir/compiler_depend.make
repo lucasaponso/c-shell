@@ -17,6 +17,7 @@
   CMakeFiles/main.dir/src/history.c.o \
   CMakeFiles/main.dir/src/main.c.o \
   CMakeFiles/main.dir/src/prompt.c.o \
+  CMakeFiles/main.dir/src/script_mngr.c.o \
   CMakeFiles/main.dir/src/shell.c.o \
   CMakeFiles/main.dir/src/users.c.o \
   CMakeFiles/main.dir/src/utils.c.o
@@ -24,6 +25,9 @@
 CMakeFiles/main.dir/src/c-shell_cmd.c.o: /home/aponso/projects/c-shell/src/c-shell_cmd.c \
   /home/aponso/projects/c-shell/include/c-shell_cmd.h \
   /home/aponso/projects/c-shell/include/history.h \
+  /home/aponso/projects/c-shell/include/script_mngr.h \
+  /home/aponso/projects/c-shell/include/shell.h \
+  /home/aponso/projects/c-shell/include/utils.h \
   /usr/include/alloca.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
@@ -246,6 +250,69 @@ CMakeFiles/main.dir/src/prompt.c.o: /home/aponso/projects/c-shell/src/prompt.c \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
+CMakeFiles/main.dir/src/script_mngr.c.o: /home/aponso/projects/c-shell/src/script_mngr.c \
+  /home/aponso/projects/c-shell/include/c-shell_cmd.h \
+  /home/aponso/projects/c-shell/include/shell.h \
+  /home/aponso/projects/c-shell/include/utils.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/long-double.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/time64.h \
+  /usr/include/bits/timesize.h \
+  /usr/include/bits/types.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
+  /usr/include/bits/wordsize.h \
+  /usr/include/endian.h \
+  /usr/include/features-time64.h \
+  /usr/include/features.h \
+  /usr/include/gnu/stubs-64.h \
+  /usr/include/gnu/stubs.h \
+  /usr/include/stdc-predef.h \
+  /usr/include/stdio.h \
+  /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/sys/cdefs.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/types.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
+
 CMakeFiles/main.dir/src/shell.c.o: /home/aponso/projects/c-shell/src/shell.c \
   /home/aponso/projects/c-shell/include/c-shell_cmd.h \
   /home/aponso/projects/c-shell/include/history.h \
@@ -386,20 +453,53 @@ CMakeFiles/main.dir/src/users.c.o: /home/aponso/projects/c-shell/src/users.c \
 
 CMakeFiles/main.dir/src/utils.c.o: /home/aponso/projects/c-shell/src/utils.c \
   /home/aponso/projects/c-shell/include/utils.h \
+  /usr/include/alloca.h \
+  /usr/include/bits/atomic_wide_counter.h \
+  /usr/include/bits/byteswap.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/bits/floatn-common.h \
+  /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/pthreadtypes-arch.h \
+  /usr/include/bits/pthreadtypes.h \
+  /usr/include/bits/select.h \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdlib-float.h \
+  /usr/include/bits/struct_mutex.h \
+  /usr/include/bits/struct_rwlock.h \
+  /usr/include/bits/thread-shared-types.h \
+  /usr/include/bits/time64.h \
   /usr/include/bits/timesize.h \
+  /usr/include/bits/types.h \
   /usr/include/bits/types/__locale_t.h \
+  /usr/include/bits/types/__sigset_t.h \
+  /usr/include/bits/types/clock_t.h \
+  /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/sigset_t.h \
+  /usr/include/bits/types/struct_timespec.h \
+  /usr/include/bits/types/struct_timeval.h \
+  /usr/include/bits/types/time_t.h \
+  /usr/include/bits/types/timer_t.h \
+  /usr/include/bits/typesizes.h \
+  /usr/include/bits/uintn-identity.h \
+  /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h \
   /usr/include/bits/wordsize.h \
+  /usr/include/endian.h \
   /usr/include/features-time64.h \
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
   /usr/include/stdc-predef.h \
+  /usr/include/stdlib.h \
   /usr/include/string.h \
   /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
+  /usr/include/sys/select.h \
+  /usr/include/sys/types.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
 
@@ -417,21 +517,9 @@ CMakeFiles/main.dir/src/utils.c.o: /home/aponso/projects/c-shell/src/utils.c \
 
 /usr/include/bits/types/sigval_t.h:
 
-/usr/include/bits/types/struct_timeval.h:
+/usr/include/bits/types/sigevent_t.h:
 
-/usr/include/bits/types/struct_timespec.h:
-
-/usr/include/bits/types/stack_t.h:
-
-/usr/include/bits/sigevent-consts.h:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/include/bits/types/siginfo_t.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/types/idtype_t.h:
 
 /usr/include/bits/types/clockid_t.h:
 
@@ -439,21 +527,21 @@ CMakeFiles/main.dir/src/utils.c.o: /home/aponso/projects/c-shell/src/utils.c \
 
 /usr/include/sched.h:
 
-/usr/include/bits/types/clock_t.h:
-
-/usr/include/bits/types/__fpos_t.h:
-
 /usr/include/bits/types.h:
 
 /usr/lib/libc_nonshared.a:
 
 /usr/include/bits/siginfo-arch.h:
 
+/home/aponso/projects/c-shell/include/script_mngr.h:
+
 /usr/include/bits/types/time_t.h:
 
 /usr/include/bits/types/sigset_t.h:
 
 /usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/types/struct_timeval.h:
 
 /usr/include/bits/stdint-intn.h:
 
@@ -467,13 +555,17 @@ CMakeFiles/main.dir/src/utils.c.o: /home/aponso/projects/c-shell/src/utils.c \
 
 /usr/include/bits/libc-header-start.h:
 
+/usr/include/bits/floatn.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/bits/types/__sigval_t.h:
+
 /usr/include/bits/thread-shared-types.h:
 
 /usr/include/bits/sigstksz.h:
 
 /usr/lib/crtn.o:
-
-/usr/include/bits/pthreadtypes.h:
 
 /usr/lib/ld-linux-x86-64.so.2:
 
@@ -485,9 +577,7 @@ CMakeFiles/main.dir/src/c-shell_cmd.c.o:
 
 /usr/include/bits/struct_mutex.h:
 
-/usr/include/bits/types/idtype_t.h:
-
-/usr/include/bits/types/__sigval_t.h:
+/home/aponso/projects/c-shell/src/c-shell_cmd.c:
 
 /usr/lib/libgcc_s.so:
 
@@ -515,13 +605,7 @@ CMakeFiles/main.dir/src/users.c.o:
 
 /usr/lib/libc.so:
 
-/home/aponso/projects/c-shell/include/history.h:
-
-/usr/include/endian.h:
-
-CMakeFiles/main.dir/src/main.c.o:
-
-/usr/include/bits/types/sigevent_t.h:
+CMakeFiles/main.dir/src/script_mngr.c.o:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
@@ -533,9 +617,39 @@ CMakeFiles/main.dir/src/shell.c.o:
 
 CMakeFiles/main.dir/src/prompt.c.o:
 
+/usr/include/bits/floatn-common.h:
+
+/home/aponso/projects/c-shell/include/shell.h:
+
+/home/aponso/projects/c-shell/include/prompt.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+CMakeFiles/main.dir/src/main.c.o:
+
+/usr/include/endian.h:
+
+/usr/include/bits/types/siginfo_t.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/bits/select.h:
+
+/home/aponso/projects/c-shell/src/prompt.c:
+
+CMakeFiles/main.dir/src/utils.c.o:
+
 /usr/lib/libc.so.6:
 
 /usr/include/unistd.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/home/aponso/projects/c-shell/include/history.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
@@ -545,25 +659,23 @@ CMakeFiles/main.dir/src/prompt.c.o:
 
 /usr/include/bits/sigthread.h:
 
-/usr/include/bits/types/__sigset_t.h:
+/usr/include/bits/types/struct_timespec.h:
 
-/usr/include/bits/select.h:
+/usr/include/bits/types/stack_t.h:
 
-CMakeFiles/main.dir/src/utils.c.o:
-
-/home/aponso/projects/c-shell/src/prompt.c:
-
-/home/aponso/projects/c-shell/src/c-shell_cmd.c:
-
-/usr/include/bits/floatn-common.h:
-
-/usr/include/bits/floatn.h:
+/usr/include/bits/sigevent-consts.h:
 
 /usr/lib/Scrt1.o:
 
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/stdio.h:
+
+/usr/include/bits/types/sig_atomic_t.h:
+
+/usr/lib/crti.o:
+
+/usr/include/bits/typesizes.h:
 
 /usr/include/bits/uintn-identity.h:
 
@@ -580,6 +692,10 @@ CMakeFiles/main.dir/src/utils.c.o:
 /usr/include/bits/waitstatus.h:
 
 /usr/include/bits/wordsize.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/home/aponso/projects/c-shell/src/script_mngr.c:
 
 /usr/include/features-time64.h:
 
@@ -617,10 +733,6 @@ CMakeFiles/main.dir/src/utils.c.o:
 
 /usr/include/bits/unistd_ext.h:
 
-/home/aponso/projects/c-shell/include/shell.h:
-
-/home/aponso/projects/c-shell/include/prompt.h:
-
 /home/aponso/projects/c-shell/include/users.h:
 
 /home/aponso/projects/c-shell/src/history.c:
@@ -633,9 +745,9 @@ CMakeFiles/main.dir/src/utils.c.o:
 
 /home/aponso/projects/c-shell/src/users.c:
 
-/usr/include/bits/stdio_lim.h:
-
 /usr/include/bits/types/__mbstate_t.h:
+
+/usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/time.h:
 
@@ -674,9 +786,3 @@ CMakeFiles/main.dir/src/utils.c.o:
 /usr/include/bits/signum-arch.h:
 
 /usr/include/bits/stdint-least.h:
-
-/usr/lib/crti.o:
-
-/usr/include/bits/typesizes.h:
-
-/usr/include/bits/types/sig_atomic_t.h:

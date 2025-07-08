@@ -5,6 +5,7 @@
  * available c-shell commands, like exit....
  */
 typedef enum {
+    CMD_RUN,
     CMD_EXIT,
     CMD_HELP,
     CMD_HISTORY,
@@ -33,6 +34,12 @@ void cmd_help();
  * For the shell.
  */
 void cmd_history();
+
+/**
+ * @brief The following function calls the command processor
+ * for C-SHELL-LAN.
+ */
+void cmd_run();
 
 
 #endif //C_SHELL_CMD

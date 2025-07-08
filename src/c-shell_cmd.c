@@ -1,19 +1,34 @@
+#include "history.h"
+#include "shell.h"
+#include "utils.h"
 #include "c-shell_cmd.h"
+#include "script_mngr.h"
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include "history.h"
 
 c_shell_cmd get_best_cmd(const char * cmd)
 {
     if (strncmp(cmd, "exit", strlen(cmd)) == 0) return CMD_EXIT;
     if (strncmp(cmd, "help", strlen(cmd)) == 0) return CMD_HELP;
     if (strncmp(cmd, "history", strlen(cmd)) == 0) return CMD_HISTORY;
+    if (strncmp(cmd, "run", strlen(cmd)) == 0) return CMD_RUN;
 }
 
 void cmd_exit()
 {
     exit(1);
+}
+
+void cmd_run(const char * filename)
+{
+    if (!filename) 
+    {
+        printf("Usage: run <scriptfile>\n");
+        return;
+    }
+
+    c_shell_cs_init(filename);
 }
 
 void cmd_history()

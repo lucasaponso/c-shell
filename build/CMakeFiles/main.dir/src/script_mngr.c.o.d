@@ -1,7 +1,7 @@
-CMakeFiles/main.dir/src/c-shell_cmd.c.o: \
- /home/aponso/projects/c-shell/src/c-shell_cmd.c \
- /usr/include/stdc-predef.h \
- /home/aponso/projects/c-shell/include/history.h /usr/include/stdlib.h \
+CMakeFiles/main.dir/src/script_mngr.c.o: \
+ /home/aponso/projects/c-shell/src/script_mngr.c \
+ /usr/include/stdc-predef.h /home/aponso/projects/c-shell/include/shell.h \
+ /home/aponso/projects/c-shell/include/utils.h /usr/include/stdlib.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
  /usr/include/bits/timesize.h /usr/include/sys/cdefs.h \
@@ -26,13 +26,10 @@ CMakeFiles/main.dir/src/c-shell_cmd.c.o: \
  /usr/include/bits/atomic_wide_counter.h /usr/include/bits/struct_mutex.h \
  /usr/include/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/bits/stdlib-float.h \
- /home/aponso/projects/c-shell/include/shell.h \
- /home/aponso/projects/c-shell/include/utils.h \
  /home/aponso/projects/c-shell/include/c-shell_cmd.h \
- /home/aponso/projects/c-shell/include/script_mngr.h \
- /home/aponso/projects/c-shell/include/shell.h /usr/include/string.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
- /usr/include/strings.h /usr/include/stdio.h \
+ /usr/include/string.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
+ /usr/include/stdio.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \

@@ -1,5 +1,7 @@
 #ifndef UTILS_H
 
+#include <stdlib.h>
+
 /**
  * @brief The following function removes a newline character
  * from the string. ("\n")
