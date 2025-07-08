@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/link.d"
   "CMakeFiles/main.dir/src/c-shell_cmd.c.o"
   "CMakeFiles/main.dir/src/c-shell_cmd.c.o.d"
+  "CMakeFiles/main.dir/src/history.c.o"
+  "CMakeFiles/main.dir/src/history.c.o.d"
   "CMakeFiles/main.dir/src/main.c.o"
   "CMakeFiles/main.dir/src/main.c.o.d"
   "CMakeFiles/main.dir/src/prompt.c.o"

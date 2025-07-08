@@ -57,4 +57,10 @@ CMakeFiles/main.dir/src/shell.c.o: \
  /home/aponso/projects/c-shell/include/shell.h \
  /home/aponso/projects/c-shell/include/utils.h \
  /home/aponso/projects/c-shell/include/prompt.h \
- /home/aponso/projects/c-shell/include/c-shell_cmd.h
+ /home/aponso/projects/c-shell/include/c-shell_cmd.h \
+ /home/aponso/projects/c-shell/include/history.h /usr/include/stdlib.h \
+ /usr/include/sys/types.h /usr/include/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/types/struct_timeval.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-float.h

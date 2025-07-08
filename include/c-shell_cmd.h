@@ -7,6 +7,7 @@
 typedef enum {
     CMD_EXIT,
     CMD_HELP,
+    CMD_HISTORY,
     CMD_UNKNOWN
 } c_shell_cmd;
 
@@ -26,6 +27,12 @@ void cmd_exit();
  * @brief The following command shows available commands to use.
  */
 void cmd_help();
+
+/**
+ * @brief The following command displays the history.
+ * For the shell.
+ */
+void cmd_history();
 
 
 #endif //C_SHELL_CMD

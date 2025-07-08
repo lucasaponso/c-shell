@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/aponso/projects/c-shell/src/c-shell_cmd.c" "CMakeFiles/main.dir/src/c-shell_cmd.c.o" "gcc" "CMakeFiles/main.dir/src/c-shell_cmd.c.o.d"
+  "/home/aponso/projects/c-shell/src/history.c" "CMakeFiles/main.dir/src/history.c.o" "gcc" "CMakeFiles/main.dir/src/history.c.o.d"
   "/home/aponso/projects/c-shell/src/main.c" "CMakeFiles/main.dir/src/main.c.o" "gcc" "CMakeFiles/main.dir/src/main.c.o.d"
   "/home/aponso/projects/c-shell/src/prompt.c" "CMakeFiles/main.dir/src/prompt.c.o" "gcc" "CMakeFiles/main.dir/src/prompt.c.o.d"
   "/home/aponso/projects/c-shell/src/shell.c" "CMakeFiles/main.dir/src/shell.c.o" "gcc" "CMakeFiles/main.dir/src/shell.c.o.d"

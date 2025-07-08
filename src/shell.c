@@ -9,6 +9,7 @@
 #include "utils.h"
 #include "prompt.h"
 #include "c-shell_cmd.h"
+#include "history.h"
 
 char shell_in[C_SHELL_MAX_CMD];
 
@@ -45,6 +46,9 @@ void* shell_mngr(void * param)
                 case CMD_HELP:
                     cmd_help();
                     break;
+                case CMD_HISTORY:
+                    cmd_history();
+                    break;
                 
                 default:
                     break;
@@ -68,6 +72,8 @@ void* shell_mngr(void * param)
             printf("Fork failed\n");
             goto exit;
         }
+
+        c_shell_add_his(shell_in);
     }
 
     exit:

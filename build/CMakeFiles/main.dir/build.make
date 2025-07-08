@@ -86,10 +86,24 @@ CMakeFiles/main.dir/src/c-shell_cmd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/c-shell_cmd.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/aponso/projects/c-shell/src/c-shell_cmd.c -o CMakeFiles/main.dir/src/c-shell_cmd.c.s
 
+CMakeFiles/main.dir/src/history.c.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/history.c.o: /home/aponso/projects/c-shell/src/history.c
+CMakeFiles/main.dir/src/history.c.o: CMakeFiles/main.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/history.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/history.c.o -MF CMakeFiles/main.dir/src/history.c.o.d -o CMakeFiles/main.dir/src/history.c.o -c /home/aponso/projects/c-shell/src/history.c
+
+CMakeFiles/main.dir/src/history.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/main.dir/src/history.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/aponso/projects/c-shell/src/history.c > CMakeFiles/main.dir/src/history.c.i
+
+CMakeFiles/main.dir/src/history.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/main.dir/src/history.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/aponso/projects/c-shell/src/history.c -o CMakeFiles/main.dir/src/history.c.s
+
 CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/main.c.o: /home/aponso/projects/c-shell/src/main.c
 CMakeFiles/main.dir/src/main.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/main.dir/src/main.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/main.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/main.c.o -MF CMakeFiles/main.dir/src/main.c.o.d -o CMakeFiles/main.dir/src/main.c.o -c /home/aponso/projects/c-shell/src/main.c
 
 CMakeFiles/main.dir/src/main.c.i: cmake_force
@@ -103,7 +117,7 @@ CMakeFiles/main.dir/src/main.c.s: cmake_force
 CMakeFiles/main.dir/src/prompt.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/prompt.c.o: /home/aponso/projects/c-shell/src/prompt.c
 CMakeFiles/main.dir/src/prompt.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/main.dir/src/prompt.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/prompt.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/prompt.c.o -MF CMakeFiles/main.dir/src/prompt.c.o.d -o CMakeFiles/main.dir/src/prompt.c.o -c /home/aponso/projects/c-shell/src/prompt.c
 
 CMakeFiles/main.dir/src/prompt.c.i: cmake_force
@@ -117,7 +131,7 @@ CMakeFiles/main.dir/src/prompt.c.s: cmake_force
 CMakeFiles/main.dir/src/shell.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/shell.c.o: /home/aponso/projects/c-shell/src/shell.c
 CMakeFiles/main.dir/src/shell.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/main.dir/src/shell.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/shell.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/shell.c.o -MF CMakeFiles/main.dir/src/shell.c.o.d -o CMakeFiles/main.dir/src/shell.c.o -c /home/aponso/projects/c-shell/src/shell.c
 
 CMakeFiles/main.dir/src/shell.c.i: cmake_force
@@ -131,7 +145,7 @@ CMakeFiles/main.dir/src/shell.c.s: cmake_force
 CMakeFiles/main.dir/src/users.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/users.c.o: /home/aponso/projects/c-shell/src/users.c
 CMakeFiles/main.dir/src/users.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/main.dir/src/users.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/users.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/users.c.o -MF CMakeFiles/main.dir/src/users.c.o.d -o CMakeFiles/main.dir/src/users.c.o -c /home/aponso/projects/c-shell/src/users.c
 
 CMakeFiles/main.dir/src/users.c.i: cmake_force
@@ -145,7 +159,7 @@ CMakeFiles/main.dir/src/users.c.s: cmake_force
 CMakeFiles/main.dir/src/utils.c.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/utils.c.o: /home/aponso/projects/c-shell/src/utils.c
 CMakeFiles/main.dir/src/utils.c.o: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/main.dir/src/utils.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/main.dir/src/utils.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/main.dir/src/utils.c.o -MF CMakeFiles/main.dir/src/utils.c.o.d -o CMakeFiles/main.dir/src/utils.c.o -c /home/aponso/projects/c-shell/src/utils.c
 
 CMakeFiles/main.dir/src/utils.c.i: cmake_force
@@ -159,6 +173,7 @@ CMakeFiles/main.dir/src/utils.c.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/src/c-shell_cmd.c.o" \
+"CMakeFiles/main.dir/src/history.c.o" \
 "CMakeFiles/main.dir/src/main.c.o" \
 "CMakeFiles/main.dir/src/prompt.c.o" \
 "CMakeFiles/main.dir/src/shell.c.o" \
@@ -169,6 +184,7 @@ main_OBJECTS = \
 main_EXTERNAL_OBJECTS =
 
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/src/c-shell_cmd.c.o
+/home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/src/history.c.o
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/src/main.c.o
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/src/prompt.c.o
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/src/shell.c.o
@@ -177,7 +193,7 @@ main_EXTERNAL_OBJECTS =
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/build.make
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/compiler_depend.ts
 /home/aponso/projects/c-shell/bin/main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable /home/aponso/projects/c-shell/bin/main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/aponso/projects/c-shell/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable /home/aponso/projects/c-shell/bin/main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
