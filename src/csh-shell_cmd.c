@@ -86,5 +86,20 @@ void cmd_help()
     printf("help\n");
     printf("    Displays this help text listing available commands and their descriptions.\n");
     printf("    Usage: help\n");
-    printf("    Use this command anytime you need a reminder of what commands are available and how to use them.\n");
+    printf("    Use this command anytime you need a reminder of what commands are available and how to use them.\n\n");
+
+    printf("set\n");
+    printf("    Sets a shell variable with a given name and value.\n");
+    printf("    Usage: set <name> <value>\n");
+    printf("    Use this to store values you can reference later in scripts or commands.\n\n");
+
+    printf("run\n");
+    printf("    Executes a script file containing shell commands.\n");
+    printf("    Usage: run <scriptfile>\n");
+    printf("    The script file should contain valid shell commands, one per line.\n\n");
+
+    printf("history\n");
+    printf("    Displays a list of all previously executed commands in the current session.\n");
+    printf("    Usage: history\n");
+    printf("    Helpful for recalling or reusing past commands.\n\n");
 }
