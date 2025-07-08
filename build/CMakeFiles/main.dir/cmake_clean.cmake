@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "/home/aponso/projects/c-shell/bin/main"
   "/home/aponso/projects/c-shell/bin/main.pdb"
   "CMakeFiles/main.dir/link.d"
+  "CMakeFiles/main.dir/src/c-shell_cmd.c.o"
+  "CMakeFiles/main.dir/src/c-shell_cmd.c.o.d"
   "CMakeFiles/main.dir/src/main.c.o"
   "CMakeFiles/main.dir/src/main.c.o.d"
   "CMakeFiles/main.dir/src/prompt.c.o"

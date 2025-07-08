@@ -50,6 +50,11 @@ CMakeFiles/main.dir/src/shell.c.o: \
  /usr/include/bits/sigthread.h /usr/include/bits/signal_ext.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/types/idtype_t.h \
+ /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
+ /usr/include/stdint.h /usr/include/bits/wchar.h \
+ /usr/include/bits/stdint-intn.h /usr/include/bits/stdint-uintn.h \
+ /usr/include/bits/stdint-least.h \
  /home/aponso/projects/c-shell/include/shell.h \
  /home/aponso/projects/c-shell/include/utils.h \
- /home/aponso/projects/c-shell/include/prompt.h
+ /home/aponso/projects/c-shell/include/prompt.h \
+ /home/aponso/projects/c-shell/include/c-shell_cmd.h

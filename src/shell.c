@@ -3,10 +3,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <stdint.h>
 #include <signal.h>
 #include "shell.h"
 #include "utils.h"
 #include "prompt.h"
+#include "c-shell_cmd.h"
 
 char shell_in[C_SHELL_MAX_CMD];
 
@@ -15,6 +17,7 @@ void* shell_mngr(void * param)
     char * cmd_args[C_SHELL_MAX_ARGS];
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
+    uint8_t cmd;
 
     signal(SIGINT, SIG_IGN);
 
@@ -22,7 +25,6 @@ void* shell_mngr(void * param)
     
     while (1)
     {
-
         printf("%s", prompt);
         
         if (fgets(shell_in, C_SHELL_MAX_CMD, stdin) == NULL)
@@ -32,6 +34,22 @@ void* shell_mngr(void * param)
 
         remove_newline(shell_in);
         delimit_cmd(shell_in, cmd_args);
+        
+        if ((cmd = get_best_cmd(shell_in)) != CMD_UNKNOWN)
+        {
+            switch (cmd)
+            {
+                case CMD_EXIT:
+                    cmd_exit();
+                    break;
+                case CMD_HELP:
+                    cmd_help();
+                    break;
+                
+                default:
+                    break;
+            }
+        }
 
         pid = fork();
 

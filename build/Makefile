@@ -129,6 +129,30 @@ main/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
+src/c-shell_cmd.o: src/c-shell_cmd.c.o
+.PHONY : src/c-shell_cmd.o
+
+# target to build an object file
+src/c-shell_cmd.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c-shell_cmd.c.o
+.PHONY : src/c-shell_cmd.c.o
+
+src/c-shell_cmd.i: src/c-shell_cmd.c.i
+.PHONY : src/c-shell_cmd.i
+
+# target to preprocess a source file
+src/c-shell_cmd.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c-shell_cmd.c.i
+.PHONY : src/c-shell_cmd.c.i
+
+src/c-shell_cmd.s: src/c-shell_cmd.c.s
+.PHONY : src/c-shell_cmd.s
+
+# target to generate assembly for a file
+src/c-shell_cmd.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/c-shell_cmd.c.s
+.PHONY : src/c-shell_cmd.c.s
+
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -258,6 +282,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... main"
+	@echo "... src/c-shell_cmd.o"
+	@echo "... src/c-shell_cmd.i"
+	@echo "... src/c-shell_cmd.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
