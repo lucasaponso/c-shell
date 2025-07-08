@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <signal.h>
 #include "shell.h"
 #include "utils.h"
 #include "prompt.h"
@@ -14,6 +15,8 @@ void* shell_mngr(void * param)
     char * cmd_args[C_SHELL_MAX_ARGS];
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
+
+    signal(SIGINT, SIG_IGN);
 
     build_shell_prompt(prompt);
     
@@ -34,6 +37,7 @@ void* shell_mngr(void * param)
 
         if (pid == 0)
         {
+            signal(SIGINT, SIG_DFL);
             execvp(cmd_args[0], cmd_args);
             goto exit;
         }
