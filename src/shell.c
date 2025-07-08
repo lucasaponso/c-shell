@@ -8,7 +8,7 @@
 #include "shell.h"
 #include "utils.h"
 #include "prompt.h"
-#include "c-shell_cmd.h"
+#include "csh-shell_cmd.h"
 #include "history.h"
 
 char shell_in[C_SHELL_MAX_CMD];

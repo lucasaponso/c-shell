@@ -9,19 +9,18 @@ char * c_shell_get_var(const char * name)
 {
     for (size_t i = 0; i < var_count; i++)
     {
-        if (strcmp(name, variables[i].name) == 0)  // FIXED: strcmp, and indexing
+        if (strcmp(name, variables[i].name) == 0)
         {
-            return variables[i].value;  // FIXED: return value, not name
+            return variables[i].value;
         }
     }
 
     printf("Unknown variable: %s\n", name);
-    return NULL;  // FIXED: must return something
+    return NULL;
 }
 
 int c_shell_set_var(const char *name, const char *value)
 {
-    // Check if it exists first
     for (size_t i = 0; i < var_count; i++)
     {
         if (strcmp(name, variables[i].name) == 0)
@@ -32,7 +31,6 @@ int c_shell_set_var(const char *name, const char *value)
         }
     }
 
-    // Add new variable
     if (var_count >= MAX_VARIABLES)
     {
         printf("Too many variables in system.\n");

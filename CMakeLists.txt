@@ -15,4 +15,4 @@ file(GLOB SOURCES src/*.c)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 
 # Create the executable
-add_executable(main ${SOURCES})
+add_executable(cshell ${SOURCES})
