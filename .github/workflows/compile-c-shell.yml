@@ -20,5 +20,8 @@ jobs:
       - name: Make build script executable
         run: chmod +x build.sh
 
+      - name: Cleanup
+        run: rm -rf build/
+
       - name: Run build script
         run: ./build.sh
