@@ -1,4 +1,6 @@
 #ifndef C_SHELL_CMD
+#define C_SHELL_CMD
+#include "vars.h"
 
 /**
  * @brief The following enum type refers to the
@@ -9,6 +11,7 @@ typedef enum {
     CMD_EXIT,
     CMD_HELP,
     CMD_HISTORY,
+    CMD_SET,
     CMD_UNKNOWN
 } c_shell_cmd;
 
@@ -41,5 +44,10 @@ void cmd_history();
  */
 void cmd_run();
 
+/**
+ * @brief The following command set's a command
+ * in the shell.
+ */
+void cmd_set(ShellVar var_to_set);
 
 #endif //C_SHELL_CMD

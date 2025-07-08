@@ -1,4 +1,5 @@
 #ifndef PROMPT_H
+#define PROMPT_H
 
 #define C_SHELL_MAX_PROMPT 1024
 

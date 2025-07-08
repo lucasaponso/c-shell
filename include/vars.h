@@ -1,4 +1,5 @@
 #ifndef VARS_H
+#define VARS_H
 
 #include <unistd.h>
 
@@ -31,6 +32,6 @@ char * c_shell_get_var(const char * name);
  * @param value The value to set in the variable
  * @return int
  */
-int c_shell_set_var(const char * name, const char * value);
+int c_shell_set_var(ShellVar var_to_set);
 
 #endif //VARS_H

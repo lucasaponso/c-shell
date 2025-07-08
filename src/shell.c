@@ -21,6 +21,7 @@ void* shell_mngr(void * param)
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
     uint8_t cmd;
+    ShellVar var_to_set;
 
     signal(SIGINT, SIG_IGN);
 
@@ -54,6 +55,11 @@ void* shell_mngr(void * param)
                     break;
                 case CMD_EXIT:
                     cmd_exit();
+                    break;
+                case CMD_SET:
+                    strncpy(var_to_set.name, cmd_args[1], MAX_VAR_NAME - 1);
+                    strncpy(var_to_set.value, cmd_args[2], MAX_VAR_VALUE - 1);
+                    cmd_set(var_to_set);
                     break;
                 case CMD_HELP:
                     cmd_help();

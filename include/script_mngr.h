@@ -1,4 +1,5 @@
 #ifndef SCRIPT_MNGR_H
+#define SCRIPT_MNGR_H
 
 #include "shell.h"
 #include <stdlib.h>

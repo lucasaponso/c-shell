@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <vars.h>
 
 c_shell_cmd get_best_cmd(const char * cmd)
 {
@@ -13,8 +14,31 @@ c_shell_cmd get_best_cmd(const char * cmd)
     if (strncmp(cmd, "help", strlen(cmd)) == 0) return CMD_HELP;
     if (strncmp(cmd, "history", strlen(cmd)) == 0) return CMD_HISTORY;
     if (strncmp(cmd, "run", strlen(cmd)) == 0) return CMD_RUN;
+    if (strncmp(cmd, "set", strlen(cmd)) == 0) return CMD_SET;
     
     return CMD_UNKNOWN;
+}
+
+void cmd_set(ShellVar var_to_set)
+{
+    if (var_to_set.name == NULL || var_to_set.value == NULL)
+    {
+        return;
+    }
+
+    if (c_shell_set_var(var_to_set) != 0)
+    {
+        printf("variable didnt work\n");
+    }
+
+    const char * output = "";
+    output = c_shell_get_var(var_to_set.name);
+
+    printf("variable set: %s: %s", var_to_set.name, output);
+
+
+    
+    
 }
 
 void cmd_exit()

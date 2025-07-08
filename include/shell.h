@@ -1,4 +1,5 @@
 #ifndef SHELL_H
+#define SHELL_H
 
 #define C_SHELL_MAX_CMD 1024
 #define C_SHELL_MAX_ARGS 64
