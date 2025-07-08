@@ -24,7 +24,7 @@ jobs:
         run: rm -rf build/
       
       - name: Create Build Platform
-        run: rm -rf build/
+        run: mkdir -p build/
 
       - name: Run build script
         run: ./build.sh
