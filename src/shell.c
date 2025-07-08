@@ -36,7 +36,7 @@ void* shell_mngr(void * param)
         remove_newline(shell_in);
         delimit_cmd(shell_in, cmd_args);
         
-        if ((cmd = get_best_cmd(shell_in)) != CMD_UNKNOWN)
+        if ((cmd = get_best_cmd(cmd_args[0])) != CMD_UNKNOWN)
         {
             switch (cmd)
             {
