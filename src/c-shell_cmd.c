@@ -14,7 +14,7 @@ c_shell_cmd get_best_cmd(const char * cmd)
     if (strncmp(cmd, "history", strlen(cmd)) == 0) return CMD_HISTORY;
     if (strncmp(cmd, "run", strlen(cmd)) == 0) return CMD_RUN;
     
-    return CMD_UNKNOWN;  // Anything else is not a built-in
+    return CMD_UNKNOWN;
 }
 
 void cmd_exit()
@@ -37,8 +37,12 @@ void cmd_history()
 {
     size_t i;
 
-    if (his_count < 1) return;
-    
+    if (his_count < 1)
+    {
+        printf("Nothing to show...\n");
+        return;
+    }
+
     for (i = 0; i < his_count; i++)
     {
         printf("[%d]: %s\n", i + 1, c_shell_history[i]);
