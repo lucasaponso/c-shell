@@ -3,7 +3,9 @@
 #include "shell.h"
 #include "users.h"
 #include "vars.h"
+#include "log.h"
 #include <unistd.h>
+#include "log.h"
 
 pthread_t shell_th_handler;
 
@@ -15,9 +17,10 @@ pthread_t shell_th_handler;
  */
 int main(int argc, char * argv[])
 {
+    c_shell_init_syslog();
+
     int rc;
     FILE * ptr = stdin;
-
     if (argc > 1)
     {
         ptr = fopen(argv[1], "r");

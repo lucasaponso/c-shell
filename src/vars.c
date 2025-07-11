@@ -1,5 +1,6 @@
 #include "vars.h"
 #include <string.h>
+#include "log.h"
 #include <stdio.h>
 
 #define MAX_LINE_LEN 512
@@ -53,7 +54,7 @@ void c_shell_set_var_env()
 
         if (var_count >= MAX_VARIABLES)
         {
-            printf("Too many variables in system\n");
+            c_shell_log("Too many variables in system", C_SHELL_LOG_CRIT);
             return;
         }
 
@@ -61,6 +62,7 @@ void c_shell_set_var_env()
     }
 
     fclose(env_file);
+    c_shell_log("env vars read from conf file", C_SHELL_LOG_INFO);
 }
 
 
