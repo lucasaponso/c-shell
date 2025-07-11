@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #define MAX_LINE_LEN 512
-
+#define C_SHELL_ENV_LOC ".c_env"
 
 ShellVar variables[MAX_VARIABLES];
 size_t var_count = 0;
@@ -27,29 +27,24 @@ void c_shell_set_var_env()
     FILE * env_file;
     ShellVar var;
     char line_in_file[MAX_LINE_LEN];
-    env_file = fopen(".c_env", "r"); //TODO: Change to hash define
+    env_file = fopen(C_SHELL_ENV_LOC, "r");
 
     if (!env_file)
     {
         return;
     }
 
-
     while (fgets(line_in_file, sizeof(line_in_file), env_file)) 
     {
-        // Remove newline
         line_in_file[strcspn(line_in_file, "\n")] = '\0';
+        
+        char * equals;
+        if (!(equals = strchr(line_in_file, '='))) continue;
 
-        // Find '='
-        char * equals = strchr(line_in_file, '=');
-        if (!equals) continue; // Skip malformed line
-
-        // Split into name and value
         *equals = '\0';
         char *name = line_in_file;
         char *value = equals + 1;
 
-        // Create and set ShellVar using existing function
         strncpy(var.name, name, MAX_VAR_NAME - 1);
         var.name[MAX_VAR_NAME - 1] = '\0';
 

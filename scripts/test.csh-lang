@@ -6,3 +6,5 @@ ls
 # This is a comment and should be ignored
 
 echo Script execution complete!
+
+set @HELLO 10

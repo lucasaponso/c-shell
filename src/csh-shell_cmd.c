@@ -74,7 +74,7 @@ void cmd_run(const char * filename)
         return;
     }
 
-    csh_lang_init(filename);
+    csh_lang_parser(filename);
 }
 
 void cmd_history()

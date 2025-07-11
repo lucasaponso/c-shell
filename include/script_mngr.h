@@ -10,7 +10,7 @@
  * to process the parsed cmd
  * @param filename The script being parsed
  */
-void csh_lang_init(const char * filename);
+void csh_lang_parser(const char * filename);
 
 
 /**

@@ -5,26 +5,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void csh_lang_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
-{
-    size_t i;
-    for (i = 0; cmd_args[i] != NULL; i++)
-    {
-        printf("%s\n", cmd_args[i]);
-    }
-}
-
-void csh_lang_init(const char * filename)
+void csh_lang_parser(const char * filename)
 {
     FILE * script;
-    size_t i;
     char shell_in[C_SHELL_MAX_CMD];
     char * cmd_args[C_SHELL_MAX_ARGS];
 
-    if ((script = fopen(filename, "r")) == NULL) 
+    if (!(script = fopen(filename, "r")))
     {
         printf("Could not open script: %s\n", filename);
-        return;
+        return;  
     }
 
     while (fgets(shell_in, sizeof(shell_in), script)) 
@@ -35,7 +25,7 @@ void csh_lang_init(const char * filename)
 
         delimit_cmd(shell_in, cmd_args);
         
-        csh_lang_cmd(cmd_args);
+        exec_c_shell_cmd(cmd_args);
     }
 
     fclose(script);
