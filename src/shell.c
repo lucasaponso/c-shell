@@ -47,6 +47,17 @@ void* shell_mngr(void * param)
         if (cmd_args[0] == NULL)
             continue;
 
+        char full_cmd[C_SHELL_MAX_CMD] = "";
+        
+        for (int i = 0; cmd_args[i] != NULL; ++i) 
+        {
+            strcat(full_cmd, cmd_args[i]);
+            strcat(full_cmd, " ");
+        }
+        
+        full_cmd[strcspn(full_cmd, "\n")] = '\0'; // Remove trailing newline if any
+        c_shell_add_his(full_cmd);
+
         
         if ((cmd = get_best_cmd(cmd_args[0])) != CMD_UNKNOWN)
         {
@@ -61,6 +72,9 @@ void* shell_mngr(void * param)
                 case CMD_SET:                    
                     cmd_set(cmd_args[1], cmd_args[2]);
                     break;
+                case CMD_GET:                    
+                    cmd_get(cmd_args[1]);
+                    break;
                 case CMD_HELP:
                     cmd_help();
                     break;
@@ -74,6 +88,7 @@ void* shell_mngr(void * param)
 
             continue;
         }
+        
 
         pid = fork();
 
@@ -91,8 +106,6 @@ void* shell_mngr(void * param)
             printf("Fork failed\n");
             pthread_exit(NULL);
         }
-
-        c_shell_add_his(shell_in);
     }
 }
 

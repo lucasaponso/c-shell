@@ -15,6 +15,7 @@ c_shell_cmd get_best_cmd(const char * cmd)
     if (strncmp(cmd, "history", strlen(cmd)) == 0) return CMD_HISTORY;
     if (strncmp(cmd, "run", strlen(cmd)) == 0) return CMD_RUN;
     if (strncmp(cmd, "set", strlen(cmd)) == 0) return CMD_SET;
+    if (strncmp(cmd, "get", strlen(cmd)) == 0) return CMD_GET;
     
     return CMD_UNKNOWN;
 }
@@ -27,6 +28,11 @@ void cmd_set(const char * name, const char * val)
     {
         return;
     }
+
+    if (name[0] != '@')
+    {
+        return;
+    }
     
     strncpy(var_to_set.name, name, MAX_VAR_NAME - 1);
     strncpy(var_to_set.value, val, MAX_VAR_VALUE - 1);
@@ -35,10 +41,22 @@ void cmd_set(const char * name, const char * val)
     {
         printf("variable didnt work\n");
     }
-
-    const char * output = "";
-    output = c_shell_get_var(var_to_set.name);
 }
+
+void cmd_get(const char * name)
+{
+    const char * output = c_shell_get_var(name);
+
+    if (output != NULL)
+    {
+        printf("%s\n", output);
+        return;
+    }
+
+    printf("Unknown variable: %s\n", name);
+    
+}
+
 
 void cmd_exit()
 {

@@ -15,8 +15,7 @@ char * c_shell_get_var(const char * name)
             return variables[i].value;
         }
     }
-
-    printf("Unknown variable: %s\n", name);
+    
     return NULL;
 }
 
