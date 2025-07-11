@@ -16,6 +16,7 @@ c_shell_cmd get_best_cmd(const char * cmd)
     if (strncmp(cmd, "run", strlen(cmd)) == 0) return CMD_RUN;
     if (strncmp(cmd, "set", strlen(cmd)) == 0) return CMD_SET;
     if (strncmp(cmd, "get", strlen(cmd)) == 0) return CMD_GET;
+    if (strncmp(cmd, "cd", strlen(cmd)) == 0) return CMD_CD;
     
     return CMD_UNKNOWN;
 }
@@ -127,4 +128,20 @@ void cmd_help()
     printf("    Displays a list of all previously executed commands in the current session.\n");
     printf("    Usage: history\n");
     printf("    Helpful for recalling or reusing past commands.\n\n");
+}
+
+void cmd_cd(const char * dir)
+{
+    if (dir == NULL)
+    {
+        dir = getenv("HOME");
+    }
+
+    if (chdir(dir) != 0)
+    {
+        printf("dir does not exist\n");
+    }
+
+
+    return;
 }

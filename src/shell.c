@@ -45,6 +45,9 @@ void exec_c_shell_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
             case CMD_SET:                    
                 cmd_set(cmd_args[1], cmd_args[2]);
                 break;
+            case CMD_CD:                    
+                cmd_cd(cmd_args[1]);
+                break;
             case CMD_GET:                    
                 cmd_get(cmd_args[1]);
                 break;

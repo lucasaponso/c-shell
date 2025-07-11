@@ -13,6 +13,7 @@ typedef enum {
     CMD_HELP,
     CMD_HISTORY,
     CMD_SET,
+    CMD_CD,
     CMD_GET,
     CMD_UNKNOWN
 } c_shell_cmd;
@@ -49,13 +50,22 @@ void cmd_run();
 /**
  * @brief The following command set's a variables 
  * value in the shell.
+ * @param name The variable you would like to set
+ * @param val The value being placed into the variable
  */
 void cmd_set(const char * name, const char * val);
 
 /**
  * @brief The following command get's a variables 
  * value in the shell.
+ * @param name The value of the variable being read
  */
 void cmd_get(const char * name);
+
+/**
+ * @brief The following command changes directory
+ * @param dir The directory wanted to go into
+ */
+void cmd_cd(const char * dir);
 
 #endif //C_SHELL_CMD
