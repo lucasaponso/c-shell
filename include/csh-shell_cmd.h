@@ -49,6 +49,6 @@ void cmd_run();
  * @brief The following command set's a variables 
  * value in the shell.
  */
-void cmd_set(ShellVar var_to_set);
+void cmd_set(const char * name, const char * val);
 
 #endif //C_SHELL_CMD

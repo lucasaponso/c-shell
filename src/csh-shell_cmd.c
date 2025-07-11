@@ -19,13 +19,18 @@ c_shell_cmd get_best_cmd(const char * cmd)
     return CMD_UNKNOWN;
 }
 
-void cmd_set(ShellVar var_to_set)
+void cmd_set(const char * name, const char * val)
 {
-    if (var_to_set.name == NULL || var_to_set.value == NULL)
+    ShellVar var_to_set;
+
+    if (name == NULL || val == NULL)
     {
         return;
     }
-
+    
+    strncpy(var_to_set.name, name, MAX_VAR_NAME - 1);
+    strncpy(var_to_set.value, val, MAX_VAR_VALUE - 1);
+    
     if (c_shell_set_var(var_to_set) != 0)
     {
         printf("variable didnt work\n");
@@ -33,17 +38,11 @@ void cmd_set(ShellVar var_to_set)
 
     const char * output = "";
     output = c_shell_get_var(var_to_set.name);
-
-    printf("variable set: %s: %s", var_to_set.name, output);
-
-
-    
-    
 }
 
 void cmd_exit()
 {
-    exit(1);
+    shell_running = 0;
 }
 
 void cmd_run(const char * filename)

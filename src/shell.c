@@ -13,21 +13,23 @@
 
 char shell_in[C_SHELL_MAX_CMD];
 
+volatile sig_atomic_t shell_running = 1;
+
 void* shell_mngr(void * param)
 {
-    FILE *input = (FILE *)param;
-
     char * cmd_args[C_SHELL_MAX_ARGS];
     char prompt[C_SHELL_MAX_PROMPT];
     pid_t pid;
     uint8_t cmd;
     ShellVar var_to_set;
+    
+    FILE *input = (FILE *)param;
 
-    signal(SIGINT, SIG_IGN);
+    signal(SIGINT, SIG_IGN); //Disable ctrl-c
 
     build_shell_prompt(prompt);
     
-    while (1)
+    while (shell_running)
     {
         if (input == stdin)
         { 
@@ -56,10 +58,8 @@ void* shell_mngr(void * param)
                 case CMD_EXIT:
                     cmd_exit();
                     break;
-                case CMD_SET:
-                    strncpy(var_to_set.name, cmd_args[1], MAX_VAR_NAME - 1);
-                    strncpy(var_to_set.value, cmd_args[2], MAX_VAR_VALUE - 1);
-                    cmd_set(var_to_set);
+                case CMD_SET:                    
+                    cmd_set(cmd_args[1], cmd_args[2]);
                     break;
                 case CMD_HELP:
                     cmd_help();
@@ -79,9 +79,8 @@ void* shell_mngr(void * param)
 
         if (pid == 0)
         {
-            signal(SIGINT, SIG_DFL);
+            signal(SIGINT, SIG_DFL); //Enable ctrl-c, when child process is running
             execvp(cmd_args[0], cmd_args);
-            goto exit;
         }
         else if (pid > 0)
         {
@@ -90,14 +89,11 @@ void* shell_mngr(void * param)
         else
         {
             printf("Fork failed\n");
-            goto exit;
+            pthread_exit(NULL);
         }
 
         c_shell_add_his(shell_in);
     }
-
-    exit:
-        pthread_exit(NULL);
 }
 
 void delimit_cmd(char cmd[C_SHELL_MAX_CMD], char * args[C_SHELL_MAX_ARGS])

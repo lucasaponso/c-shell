@@ -2,6 +2,9 @@
 #include <pthread.h>
 #include "shell.h"
 #include "users.h"
+#include <unistd.h>
+
+pthread_t shell_th_handler;
 
 /**
  * @brief The following function is the entry
@@ -11,7 +14,6 @@
  */
 int main(int argc, char * argv[])
 {
-    pthread_t shell_th_handler;
     int rc;
     FILE * ptr = stdin;
 
