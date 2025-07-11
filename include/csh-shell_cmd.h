@@ -1,5 +1,6 @@
 #ifndef C_SHELL_CMD
 #define C_SHELL_CMD
+
 #include "vars.h"
 
 /**
@@ -40,14 +41,14 @@ void cmd_history();
 
 /**
  * @brief The following function calls the command processor
- * for C-SHELL-LAN.
+ * for CSH_LANG.
  */
 void cmd_run();
 
 /**
- * @brief The following command set's a command
- * in the shell.
+ * @brief The following command set's a variables 
+ * value in the shell.
  */
-void cmd_set(ShellVar var_to_set);
+void cmd_set(const char * name, const char * val);
 
 #endif //C_SHELL_CMD

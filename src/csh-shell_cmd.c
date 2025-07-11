@@ -19,13 +19,18 @@ c_shell_cmd get_best_cmd(const char * cmd)
     return CMD_UNKNOWN;
 }
 
-void cmd_set(ShellVar var_to_set)
+void cmd_set(const char * name, const char * val)
 {
-    if (var_to_set.name == NULL || var_to_set.value == NULL)
+    ShellVar var_to_set;
+
+    if (name == NULL || val == NULL)
     {
         return;
     }
-
+    
+    strncpy(var_to_set.name, name, MAX_VAR_NAME - 1);
+    strncpy(var_to_set.value, val, MAX_VAR_VALUE - 1);
+    
     if (c_shell_set_var(var_to_set) != 0)
     {
         printf("variable didnt work\n");
@@ -33,17 +38,11 @@ void cmd_set(ShellVar var_to_set)
 
     const char * output = "";
     output = c_shell_get_var(var_to_set.name);
-
-    printf("variable set: %s: %s", var_to_set.name, output);
-
-
-    
-    
 }
 
 void cmd_exit()
 {
-    exit(1);
+    shell_running = 0;
 }
 
 void cmd_run(const char * filename)
@@ -86,5 +85,20 @@ void cmd_help()
     printf("help\n");
     printf("    Displays this help text listing available commands and their descriptions.\n");
     printf("    Usage: help\n");
-    printf("    Use this command anytime you need a reminder of what commands are available and how to use them.\n");
+    printf("    Use this command anytime you need a reminder of what commands are available and how to use them.\n\n");
+
+    printf("set\n");
+    printf("    Sets a shell variable with a given name and value.\n");
+    printf("    Usage: set <name> <value>\n");
+    printf("    Use this to store values you can reference later in scripts or commands.\n\n");
+
+    printf("run\n");
+    printf("    Executes a script file containing shell commands.\n");
+    printf("    Usage: run <scriptfile>\n");
+    printf("    The script file should contain valid shell commands, one per line.\n\n");
+
+    printf("history\n");
+    printf("    Displays a list of all previously executed commands in the current session.\n");
+    printf("    Usage: history\n");
+    printf("    Helpful for recalling or reusing past commands.\n\n");
 }
