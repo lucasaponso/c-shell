@@ -62,7 +62,7 @@ void c_shell_set_var_env()
     }
 
     fclose(env_file);
-    c_shell_log("env vars read from conf file", C_SHELL_LOG_INFO);
+    c_shell_log("ENV variables successfuly read from file", C_SHELL_LOG_INFO);
 }
 
 
