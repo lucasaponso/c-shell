@@ -48,6 +48,11 @@ void cmd_set(const char * name, const char * val)
 
 void cmd_get(const char * name)
 {
+    if (name[0] != '@')
+    {
+        return;
+    }
+    
     const char * output = c_shell_get_var(name);
 
     if (output != NULL)
