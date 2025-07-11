@@ -2,6 +2,7 @@
 #include <pthread.h>
 #include "shell.h"
 #include "users.h"
+#include "vars.h"
 #include <unistd.h>
 
 pthread_t shell_th_handler;
@@ -28,7 +29,8 @@ int main(int argc, char * argv[])
     }
 
     load_active_user_c_shell();
-
+    c_shell_set_var_env();
+    
     rc = pthread_create(&shell_th_handler, NULL, shell_mngr, ptr);
     
     if (rc)

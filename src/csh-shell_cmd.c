@@ -36,11 +36,14 @@ void cmd_set(const char * name, const char * val)
     
     strncpy(var_to_set.name, name, MAX_VAR_NAME - 1);
     strncpy(var_to_set.value, val, MAX_VAR_VALUE - 1);
-    
-    if (c_shell_set_var(var_to_set) != 0)
+
+    if (var_count >= MAX_VARIABLES)
     {
-        printf("variable didnt work\n");
+        printf("Too many variables in system\n");
+        return;
     }
+
+    c_shell_set_var(var_to_set);
 }
 
 void cmd_get(const char * name)
