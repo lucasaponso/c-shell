@@ -15,6 +15,7 @@ typedef enum {
     CMD_SET,
     CMD_CD,
     CMD_GET,
+    CMD_GET_USER,
     CMD_UNKNOWN
 } c_shell_cmd;
 
@@ -67,5 +68,11 @@ void cmd_get(const char * name);
  * @param dir The directory wanted to go into
  */
 void cmd_cd(const char * dir);
+
+/**
+ * @brief The following command get's the current
+ * user, and displays the username.
+ */
+void cmd_get_user();
 
 #endif //C_SHELL_CMD

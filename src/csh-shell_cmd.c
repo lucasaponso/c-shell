@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "users.h"
 #include <vars.h>
 
 c_shell_cmd get_best_cmd(const char * cmd)
@@ -17,6 +18,7 @@ c_shell_cmd get_best_cmd(const char * cmd)
     if (strncmp(cmd, "set", strlen(cmd)) == 0) return CMD_SET;
     if (strncmp(cmd, "get", strlen(cmd)) == 0) return CMD_GET;
     if (strncmp(cmd, "cd", strlen(cmd)) == 0) return CMD_CD;
+    if (strncmp(cmd, "getu", strlen(cmd)) == 0) return CMD_GET_USER;
     
     return CMD_UNKNOWN;
 }
@@ -144,4 +146,15 @@ void cmd_cd(const char * dir)
 
 
     return;
+}
+
+void cmd_get_user()
+{
+    printf("Username      : %s\n", pw->pw_name);
+    printf("Password (x)  : %s\n", pw->pw_passwd);  // Usually "x" or "*"
+    printf("User ID (UID) : %d\n", pw->pw_uid);
+    printf("Group ID (GID): %d\n", pw->pw_gid);
+    printf("User Info     : %s\n", pw->pw_gecos);   // Full name/comment field
+    printf("Home Dir      : %s\n", pw->pw_dir);
+    printf("Shell         : %s\n", pw->pw_shell);
 }

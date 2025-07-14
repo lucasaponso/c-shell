@@ -58,7 +58,9 @@ void exec_c_shell_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
             case CMD_HISTORY:
                 cmd_history();
                 break;
-            
+            case CMD_GET_USER:
+                cmd_get_user(cmd_args[1]);
+                break;
             default:
                 break;
         }
