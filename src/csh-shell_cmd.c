@@ -136,7 +136,7 @@ void cmd_cd(const char * dir)
 {
     if (dir == NULL)
     {
-        dir = getenv("HOME");
+        dir = pw->pw_dir;
     }
 
     if (chdir(dir) != 0)
