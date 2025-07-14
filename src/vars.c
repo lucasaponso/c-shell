@@ -32,6 +32,7 @@ void c_shell_set_var_env()
 
     if (!env_file)
     {
+        c_shell_log("No env file presented", C_SHELL_LOG_INFO);
         return;
     }
 

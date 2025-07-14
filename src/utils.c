@@ -10,8 +10,3 @@ void remove_newline(char *str)
         str[len - 1] = '\0';
     }
 }
-
-int max(size_t a, size_t b) 
-{
-    return (a > b) ? a : b;
-}

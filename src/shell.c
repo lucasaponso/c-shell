@@ -7,6 +7,7 @@
 #include <signal.h>
 #include "shell.h"
 #include "utils.h"
+#include "log.h"
 #include "prompt.h"
 #include "csh-shell_cmd.h"
 #include "history.h"
@@ -77,9 +78,9 @@ void exec_c_shell_cmd(char * cmd_args[C_SHELL_MAX_ARGS])
         waitpid(pid, NULL, 0);
     }
     else
-    {
-        printf("Fork failed\n");
-        pthread_exit(NULL);
+    {       
+        c_shell_log("Unable to fork!", C_SHELL_LOG_CRIT);
+        shell_running = 0;
     }
     return;
 }
