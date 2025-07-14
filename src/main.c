@@ -6,6 +6,7 @@
 #include "log.h"
 #include <unistd.h>
 #include "log.h"
+#include "utils.h"
 
 pthread_t shell_th_handler;
 

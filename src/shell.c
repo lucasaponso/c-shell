@@ -102,7 +102,7 @@ void* shell_mngr(void * param)
     {
         if (input == stdin)
         { 
-            printf("%s", prompt);
+            printc(COLOR_BLUE, "%s", prompt);
         }
         
         if (fgets(shell_in, C_SHELL_MAX_CMD, input) == NULL)
