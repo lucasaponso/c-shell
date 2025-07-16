@@ -12,9 +12,9 @@ Supports:
 
 #### Retrieve Latest Changes
 ```
+git checkout release
 git fetch
 git pull
-git checkout release
 ```
 
 #### Build
