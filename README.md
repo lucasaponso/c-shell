@@ -1,6 +1,6 @@
 ## C-SHELL
 
-#### A minimal shell program...
+### A minimal shell program...
 
 
 Supports:
@@ -8,8 +8,16 @@ Supports:
 - ENV Variables
 
 
-#### Build From Source
+### Build From Source
 
+#### Retrieve Latest Changes
+```
+git fetch
+git pull
+git checkout release
+```
+
+#### Build
 ```
 mkdir -p build/
 chmod +x build.sh
