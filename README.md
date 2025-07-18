@@ -8,7 +8,10 @@ Supports:
 - ENV Variables
 
 
-### Build From Source
+### Manual Install
+```
+sudo install -Dm755 bin/cshell /usr/bin/cshell
+```
 
 #### Retrieve Latest Changes
 ```
