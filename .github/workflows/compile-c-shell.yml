@@ -28,3 +28,26 @@ jobs:
 
       - name: Run build script
         run: ./build.sh
+
+  release:
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install base-devel and cmake
+        run: |
+          pacman -Sy --noconfirm base-devel cmake git
+
+      - name: Build and install package
+        run: |
+          # Allow makepkg to run without root
+          useradd -m builder
+          mkdir -p /home/builder/pkgbuild
+          cp -r . /home/builder/pkgbuild/
+          chown -R builder:builder /home/builder/pkgbuild
+          cd /home/builder/pkgbuild
+          sudo -u builder makepkg -si --noconfirm
