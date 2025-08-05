@@ -2,6 +2,7 @@
 #include <string.h>
 #include "log.h"
 #include <stdio.h>
+#include "utils.h"
 
 #define MAX_LINE_LEN 512
 #define C_SHELL_ENV_LOC ".c_env"
@@ -25,10 +26,11 @@ char * c_shell_get_var(const char * name)
 
 void c_shell_set_var_env()
 {
-    FILE * env_file;
-    ShellVar var;
+    FILE * env_file = fopen(C_SHELL_ENV_LOC, "r");
     char line_in_file[MAX_LINE_LEN];
-    env_file = fopen(C_SHELL_ENV_LOC, "r");
+    size_t line_len;
+    char * var_name = NULL;
+    char * existing_value = NULL;
 
     if (!env_file)
     {
@@ -38,33 +40,39 @@ void c_shell_set_var_env()
 
     while (fgets(line_in_file, sizeof(line_in_file), env_file)) 
     {
+        // Strip trailing newline
         line_in_file[strcspn(line_in_file, "\n")] = '\0';
+        line_len = strlen(line_in_file);
         
-        char * equals;
-        if (!(equals = strchr(line_in_file, '='))) continue;
-
-        *equals = '\0';
-        char *name = line_in_file;
-        char *value = equals + 1;
-
-        strncpy(var.name, name, MAX_VAR_NAME - 1);
-        var.name[MAX_VAR_NAME - 1] = '\0';
-
-        strncpy(var.value, value, MAX_VAR_VALUE - 1);
-        var.value[MAX_VAR_VALUE - 1] = '\0';
-
-        if (var_count >= MAX_VARIABLES)
+        // Handle standard VAR=VALUE line
+        if (is_assignment_line(line_in_file)) 
         {
-            c_shell_log("Too many variables in system", C_SHELL_LOG_CRIT);
-            return;
+            handle_assignment_line(line_in_file);
         }
 
-        c_shell_set_var(var);
+        // Handle increment directive: @VAR++
+        if (is_increment_directive(line_in_file)) 
+        {
+            line_in_file[line_len - 2] = '\0';             // Remove '++'
+            var_name = &line_in_file[0];        // Skip '@'
+            existing_value = c_shell_get_var(var_name);
+            
+            if (existing_value != NULL) //variable exists
+            {
+                handle_increment_directive(var_name, existing_value);
+                continue;
+            }
+
+            printf("Error: Variable does not exist: %s\n", var_name);
+            exit(1);
+        }
+
     }
 
     fclose(env_file);
-    c_shell_log("ENV variables successfuly read from file", C_SHELL_LOG_INFO);
+    c_shell_log("ENV variables successfully read from file", C_SHELL_LOG_INFO);
 }
+
 
 
 void c_shell_set_var(ShellVar var_to_set)
