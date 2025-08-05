@@ -26,13 +26,14 @@ char * c_shell_get_var(const char * name)
 
 void c_shell_set_var_env()
 {
-    FILE * env_file = fopen(C_SHELL_ENV_LOC, "r");
+    FILE * env_file;
     char line_in_file[MAX_LINE_LEN];
     size_t line_len;
     char * var_name = NULL;
     char * existing_value = NULL;
-
-    if (!env_file)
+    increment_type type;
+        
+    if (!(env_file = fopen(C_SHELL_ENV_LOC, "r")))
     {
         c_shell_log("No env file presented", C_SHELL_LOG_INFO);
         return;
@@ -41,7 +42,9 @@ void c_shell_set_var_env()
     while (fgets(line_in_file, sizeof(line_in_file), env_file)) 
     {
         // Strip trailing newline
-        line_in_file[strcspn(line_in_file, "\n")] = '\0';
+        //line_in_file[strcspn(line_in_file, "\n")] = '\0';
+        remove_newline(line_in_file);
+        
         line_len = strlen(line_in_file);
         
         // Handle standard VAR=VALUE line
@@ -51,7 +54,7 @@ void c_shell_set_var_env()
         }
 
         // Handle increment directive: @VAR++
-        if (is_increment_directive(line_in_file)) 
+        if (is_increment_directive(line_in_file, &type)) 
         {
             line_in_file[line_len - 2] = '\0';             // Remove '++'
             var_name = &line_in_file[0];        // Skip '@'
@@ -59,7 +62,7 @@ void c_shell_set_var_env()
             
             if (existing_value != NULL) //variable exists
             {
-                handle_increment_directive(var_name, existing_value);
+                handle_increment_directive(var_name, existing_value, type);
                 continue;
             }
 

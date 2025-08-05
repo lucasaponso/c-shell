@@ -12,6 +12,13 @@
 #define COLOR_RESET   "\033[0m"
 #define printc(color, fmt, ...) printf(color fmt COLOR_RESET, ##__VA_ARGS__)
 
+
+typedef enum
+{
+    INCREMENT_PLUS,
+    INCREMENT_MINUS
+} increment_type;
+
 /**
  * @brief The following function removes a newline character
  * from the string. ("\n")
@@ -25,14 +32,14 @@ void remove_newline(char * str);
  * line relates to an increment of a variable
  * @param line
  */
-bool is_increment_directive(const char *line);
+bool is_increment_directive(const char * line, increment_type * type);
 
 /**
  * @brief The following function handles an increment of
  * an existing variable.
  * @param line
  */
-void handle_increment_directive(char * var_name, char * existing_value);
+void handle_increment_directive(char * var_name, char * existing_value, increment_type type);
 
 /**
  * @brief The following function checks whether the script line
